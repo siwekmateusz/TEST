@@ -49,8 +49,8 @@ const UI = (() => {
       <div class="karta-stopka">
         <span class="karta-data">Edytowano: ${dataZm}</span>
         <div class="karta-akcje">
-          <button class="btn btn-edytuj" data-akcja="edytuj" data-id="${notatka.id}" title="Edytuj notatkę">&#9998; Edytuj</button>
-          <button class="btn btn-usun" data-akcja="usun" data-id="${notatka.id}" title="Usuń notatkę">&#128465; Usuń</button>
+          <button class="btn btn-edytuj" data-akcja="edytuj" data-id="${notatka.id}" title="Edytuj notatkę">Edytuj</button>
+          <button class="btn btn-usun" data-akcja="usun" data-id="${notatka.id}" title="Usuń notatkę">Usuń</button>
         </div>
       </div>
       <div class="potwierdzenie-usuniecia ukryty" data-confirm="${notatka.id}">
@@ -67,7 +67,7 @@ const UI = (() => {
     const el = document.createElement('div');
     el.className = 'stan-pusty';
     el.innerHTML = `
-      <span class="stan-pusty-ikona">&#128221;</span>
+      <span class="stan-pusty-ikona"></span>
       <h3>Nie masz jeszcze żadnych notatek</h3>
       <p>Kliknij „+ Nowa notatka", aby dodać pierwszą.</p>
     `;
@@ -78,7 +78,7 @@ const UI = (() => {
     const el = document.createElement('div');
     el.className = 'stan-pusty';
     el.innerHTML = `
-      <span class="stan-pusty-ikona">&#128269;</span>
+      <span class="stan-pusty-ikona"></span>
       <h3>Nie znaleziono notatek</h3>
       <p>Spróbuj innego słowa kluczowego.</p>
     `;
