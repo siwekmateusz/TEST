@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notatki</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="naglowek">
+    <div class="naglowek-wnetrze">
+      <h1 class="logo">&#128221; Notatki</h1>
+      <button id="btn-nowa-notatka" class="btn btn-glowny">+ Nowa notatka</button>
+    </div>
+  </header>
+
+  <main class="glowna">
+
+    <div class="pasek-wyszukiwania">
+      <input
+        type="search"
+        id="wyszukiwarka"
+        class="pole-wyszukiwania"
+        placeholder="Szukaj notatek..."
+        autocomplete="off"
+      >
+    </div>
+
+    <div id="lista-notatek" class="siatka-notatek"></div>
+
+  </main>
+
+  <!-- Modal: Nowa / Edytuj notatkę -->
+  <div id="modal-overlay" class="modal-overlay ukryty" role="dialog" aria-modal="true" aria-labelledby="modal-tytul-naglowek">
+    <div class="modal-panel">
+      <div class="modal-naglowek">
+        <h2 id="modal-tytul-naglowek">Nowa notatka</h2>
+        <button id="btn-zamknij-modal" class="btn-zamknij" aria-label="Zamknij">&times;</button>
+      </div>
+      <form id="formularz-notatki" novalidate>
+        <div class="pole-formularza">
+          <label for="pole-tytul">Tytuł <span class="wymagany">*</span></label>
+          <input
+            type="text"
+            id="pole-tytul"
+            class="input-tekstowy"
+            placeholder="Wpisz tytuł notatki..."
+            maxlength="150"
+            autocomplete="off"
+          >
+          <span id="blad-tytul" class="blad-walidacji ukryty">Tytuł jest wymagany.</span>
+        </div>
+        <div class="pole-formularza">
+          <label for="pole-tresc">Treść</label>
+          <textarea
+            id="pole-tresc"
+            class="input-tekstowy textarea"
+            placeholder="Wpisz treść notatki..."
+            rows="6"
+          ></textarea>
+        </div>
+        <div class="modal-przyciski">
+          <button type="button" id="btn-anuluj" class="btn btn-drugorzedny">Anuluj</button>
+          <button type="submit" id="btn-zapisz" class="btn btn-glowny">Zapisz</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/notes.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
